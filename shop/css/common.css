@@ -1,0 +1,279 @@
+/* 首页样式文件 */
+body {
+  background-color: #FAFAFA;
+}
+/* 版心 */
+.wrapper {
+  margin: 0 100px;
+}
+/* 头部导航 */
+.menu {
+  background-color: #fff;
+  height: 90px;
+  width: 100%;
+  transition: height 0.2s;
+}
+.menu .menu-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  /* 登录注册 */
+}
+.menu .menu-list .left {
+  display: flex;
+  align-items: center;
+  height: 55px;
+  /* logo */
+}
+.menu .menu-list .left h1 {
+  width: 150px;
+  height: 45px;
+}
+.menu .menu-list .left h1 a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.menu .menu-list .left h1 a img {
+  image-rendering: -moz-crisp-edges;
+  /* Firefox */
+  image-rendering: -o-crisp-edges;
+  /* Opera */
+  image-rendering: -webkit-optimize-contrast;
+  /* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
+  /* IE (non-standard property) */
+}
+.menu .menu-list .left .menu-conent {
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+  margin-bottom: 0;
+  /* 菜单 */
+}
+.menu .menu-list .left .menu-conent .current::after {
+  width: 100%;
+}
+.menu .menu-list .left .menu-conent li {
+  margin-left: 15px;
+  padding: 0 15px;
+  text-align: center;
+  font-size: 18px;
+  transition: background 0.5s;
+}
+.menu .menu-list .left .menu-conent li:hover a {
+  color: #000;
+}
+.menu .menu-list .left .menu-conent li:hover a::after {
+  width: 100%;
+}
+.menu .menu-list .left .menu-conent li a {
+  display: inline-block;
+  line-height: 30px;
+  text-align: center;
+  font-size: 16px;
+  color: #333333;
+  cursor: pointer;
+}
+.menu .menu-list .left .menu-conent li a::after {
+  content: "";
+  display: block;
+  transition: width 0.2s;
+  width: 0;
+  background-color: #000;
+  border-bottom: 2px solid #407cff;
+}
+.menu .menu-list .user {
+  cursor: pointer;
+  display: flex;
+}
+.menu .menu-list .user .login,
+.menu .menu-list .user .register {
+  width: 80px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border-radius: 4px;
+  background: #407cff;
+  font-size: 14px;
+  transition: color 0.2s;
+  margin-left: 15px;
+}
+.menu .menu-list .user .login:hover,
+.menu .menu-list .user .register:hover {
+  background-color: #3662EB;
+  color: #eee;
+}
+.menu .menu-list .user .register {
+  background: 0;
+  color: #407cff;
+  font-size: 14px;
+  border: 1px solid #407cff;
+}
+.menu .menu-list .user .register:hover {
+  background-color: #407cff;
+  color: #FFFFFF;
+}
+.menu .menu-list .more {
+  display: none;
+}
+.menu .menu-list .more .bg {
+  visibility: hidden;
+}
+.menu .menu-list .more .bg .menu-tab {
+  height: 1px;
+}
+/* 页脚 */
+.footer {
+  padding-top: 90px;
+  padding-bottom: 25px;
+  background-color: #407cff;
+  margin-top: 20px;
+  color: #fff;
+}
+.footer .top {
+  display: flex;
+  flex-wrap: wrap;
+}
+.footer .top dl {
+  width: 25%;
+}
+.footer .top dl dt {
+  font-weight: 600;
+  font-size: 19px;
+  margin-bottom: 30px;
+}
+.footer .top dl a {
+  display: inline-block;
+  line-height: 40px;
+  color: #F5F5F5;
+}
+.footer .line {
+  height: 1px;
+  background-color: #ffffff24;
+  margin-top: 55px;
+  margin-bottom: 30px;
+}
+.footer .bottom a {
+  display: block;
+  color: #F5F5F5;
+  padding-left: 10px;
+}
+@media (max-width: 1140px) {
+  .main .wrapper .left {
+    padding-left: 0;
+  }
+  .main .wrapper .right {
+    padding-right: 0;
+  }
+}
+@media (max-width: 940px) {
+  .menu .menu-list .left .menu-conent {
+    display: none;
+  }
+}
+@media (max-width: 500px) {
+  .wrapper {
+    margin: 0 15px;
+    transition: margin 0.2s;
+  }
+  .menu {
+    height: 65px;
+  }
+  .menu .menu-list {
+    /* logo */
+  }
+  .menu .menu-list .left h1 {
+    height: 35px;
+  }
+  .menu .menu-list .user {
+    display: none;
+  }
+  .menu .menu-list .more {
+    display: block;
+  }
+  .menu .menu-list .more .menu-btn {
+    width: 40px;
+    height: 40px;
+    padding: 6px;
+  }
+  .menu .menu-list .more .menu-btn svg {
+    width: 100%;
+    height: 100%;
+  }
+  .menu .menu-list .more .bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+    width: 100%;
+  }
+  .menu .menu-list .more .bg .menu-tab {
+    z-index: 999;
+    width: 200px;
+    height: 290px;
+    background-color: #fff;
+    margin: 55px 15px;
+    padding: 0 15px;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(18, 18, 18, 0.2);
+  }
+  .menu .menu-list .more .bg .menu-tab .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    border-bottom: 1px solid #eee;
+  }
+  .menu .menu-list .more .bg .menu-tab .button .login,
+  .menu .menu-list .more .bg .menu-tab .button .register {
+    width: 80px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 4px;
+    background: #407cff;
+    font-size: 14px;
+    transition: color 0.2s;
+    margin-left: 15px;
+  }
+  .menu .menu-list .more .bg .menu-tab .button .login:hover,
+  .menu .menu-list .more .bg .menu-tab .button .register:hover {
+    background-color: #3662EB;
+    color: #eee;
+  }
+  .menu .menu-list .more .bg .menu-tab .button .register {
+    background: 0;
+    color: #407cff;
+    font-size: 14px;
+    border: 1px solid #407cff;
+  }
+  .menu .menu-list .more .bg .menu-tab .button .register:hover {
+    background-color: #407cff;
+    color: #FFFFFF;
+  }
+  .menu .menu-list .more .bg .menu-tab .menu-item {
+    height: 45px;
+    font-size: 17px;
+    line-height: 45px;
+  }
+  .menu .menu-list .more .bg .menu-tab .menu-item a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  /* 页脚 */
+  .footer .top dl {
+    transition: width 0.2s;
+    width: 50%;
+  }
+}

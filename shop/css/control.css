@@ -1,0 +1,51 @@
+.main .my-device,
+.main .ck-device {
+  background-color: #eee;
+  padding: 15px;
+  border-radius: 10px;
+}
+.main .my-device h2,
+.main .ck-device h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.main .my-device .list,
+.main .ck-device .list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.main .my-device .list .project-list,
+.main .ck-device .list .project-list {
+  width: 25%;
+  padding: 15px 10px;
+}
+.main .my-device .list .project-list a,
+.main .ck-device .list .project-list a {
+  display: block;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+}
+.main .my-device .list .project-list a h3,
+.main .ck-device .list .project-list a h3 {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 10px;
+}
+.main .my-device .list .project-list a img,
+.main .ck-device .list .project-list a img {
+  border-radius: 5px;
+}
+.main .ck-device {
+  margin-top: 35px;
+}
+.main .ck-device .project-list a .button {
+  text-align: center;
+  margin-top: 8px;
+}
+@media (max-width: 500px) {
+  .main .my-device .list .project-list,
+  .main .ck-device .list .project-list {
+    width: 50%;
+  }
+}

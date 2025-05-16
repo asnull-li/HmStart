@@ -1,0 +1,37 @@
+.app {
+  background-color: #fff;
+  width: 500px;
+  margin: 0 auto;
+  padding: 15px;
+  margin-top: 10px;
+  box-shadow: 0 1px 5px rgba(18, 18, 18, 0.1);
+  border-radius: 5px;
+}
+.app .head {
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  align-items: center;
+}
+.app .head .title {
+  font-size: 20px;
+}
+.app .head .add {
+  color: #0072FF;
+}
+.app .body .jn-item {
+  margin: 5px 0;
+  padding: 10px 10px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+}
+.app .body .jn-item .jn-p {
+  border-left: 3px solid #0072FF;
+  padding-left: 10px;
+  margin-top: 10px;
+}
+@media (max-width: 500px) {
+  .app {
+    width: 100%;
+  }
+}

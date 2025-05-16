@@ -1,0 +1,258 @@
+//out:../css/common.css
+
+/* 公共样式文件 */
+
+/* 版心 */
+.wrapper{
+	margin: 0 100px;
+}
+/* 头部导航 */
+.menu{
+	position: fixed;
+	background-color: #fff;
+	height: 110px;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	transition: height .2s;
+	.menu-list{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 100%;
+		/* logo */
+		h1{
+			width: 150px;
+			height: 55px;
+			a{
+				display: block;
+				width: 100%;
+				height: 100%;
+				img{
+					image-rendering: -moz-crisp-edges; /* Firefox */
+					image-rendering: -o-crisp-edges; /* Opera */
+					image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+					image-rendering: crisp-edges;
+					-ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+				}
+			}
+		}		
+		
+		.menu-conent{
+			display: flex;
+			align-items: center;
+			margin-right: 35px;
+			.current{
+				&::after{
+					width: 100%;
+				}
+			}
+			
+			/* 菜单 */
+			li{
+				margin-left: 35px;
+				padding: 0 15px;
+				text-align: center;
+				font-size: 18px;
+				transition: background .5s;
+				
+				&:hover a{
+					color: #000;	
+					
+					&::after{
+						width: 100%;
+					}
+				}
+				a{
+					display: inline-block;
+					line-height: 30px;
+					text-align: center;
+					font-size: 16px;
+					color: #333333;
+					cursor: pointer;
+					&::after{
+						content: "";
+						display: block;
+						transition: width .2s;
+						width: 0;
+						background-color: #000;
+						border-bottom: 2px solid #407cff;
+						
+					}
+				}
+			}
+			
+		}
+		
+		/* 登录注册 */
+		.user{
+			
+			cursor: pointer;
+			display: flex;
+			
+			.login,
+			.register{
+				width: 80px;
+				height: 30px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: #fff;
+				border-radius: 4px;
+				background: #407cff;
+				font-size: 14px;
+				transition: color .2s;
+				margin-left: 15px;
+				
+				&:hover{
+					background-color: #3662EB;
+					color: #eee;
+				}
+				
+			}
+				
+			.register{
+				background: 0;
+				color: #407cff;
+				font-size: 14px;
+				border: 1px solid #407cff;
+				&:hover{
+					background-color: #407cff;
+					color: #FFFFFF;
+				}
+			}
+		}
+		.more{
+			display: none;
+			.bg{
+				visibility: hidden;
+				.menu-tab{
+					height:1px
+				}	
+				
+			}
+			
+		}
+	}
+}
+
+@media(max-width:940px) {
+    // 平板
+	
+	.menu{
+		.menu-list{
+			.menu-conent{
+				display: none;
+			}
+		}
+	}
+}
+
+@media(max-width:500px) {
+	.wrapper{
+		margin: 0 15px;
+		transition: margin .2s;
+	}
+	.menu{
+		height: 65px;
+		box-shadow: 0 1px 3px rgba(18, 18, 18, 0.2);
+		.menu-list{
+			/* logo */
+			h1{
+				height: 35px;
+			}		
+			.menu-conent{
+				display: none;
+			}
+			.user{
+				display: none;
+			}
+			.more{
+				display: block;
+				.menu-btn{
+					width: 40px;
+					height: 40px;
+					padding: 6px;
+					svg{
+						width: 100%;
+						height: 100%;
+					}
+				}
+				.bg{
+					position: fixed;
+					top: 0;
+					left: 0;
+					height: 100%;
+					width: 100%;
+					z-index: 1;
+					display: flex;
+					justify-content: flex-end;
+					height: 100%;
+					width: 100%;
+					// background-color: #21212182;
+					// visibility: hidden;
+					.menu-tab{
+						width: 200px;
+						height: 160px;
+						background-color: #fff;
+						margin: 55px 15px;
+						padding: 0 15px;
+						border-radius: 10px;
+						box-shadow: 0 1px 3px rgba(18, 18, 18, 0.2);
+						
+						.button{
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							height: 60px;
+							border-bottom: 1px solid #eee;
+							.login,
+							.register{
+								width: 80px;
+								height: 30px;
+								display: flex;
+								justify-content: center;
+								align-items: center;
+								color: #fff;
+								border-radius: 4px;
+								background: #407cff;
+								font-size: 14px;
+								transition: color .2s;
+								margin-left: 15px;
+								
+								&:hover{
+									background-color: #3662EB;
+									color: #eee;
+								}
+								
+								}
+								
+								.register{
+									background: 0;
+									color: #407cff;
+									font-size: 14px;
+									border: 1px solid #407cff;
+									&:hover{
+										background-color: #407cff;
+										color: #FFFFFF;
+								}
+							}
+						}
+						.menu-item{
+							height: 45px;
+							font-size: 17px;
+							line-height: 45px;
+							a{
+								display: block;
+								width: 100%;
+								height: 100%;
+							}
+						}
+					}
+				}
+	
+			}
+		}
+	}
+}

@@ -1,0 +1,119 @@
+body {
+  background-color: #FAFAFA;
+}
+.main #carouselExampleIndicators {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.main #carouselExampleIndicators img {
+  image-rendering: -moz-crisp-edges;
+  /* Firefox */
+  image-rendering: -o-crisp-edges;
+  /* Opera */
+  image-rendering: -webkit-optimize-contrast;
+  /* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
+  /* IE (non-standard property) */
+}
+.main .banner {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+.main .banner .left {
+  flex: 1;
+  margin-right: 15px;
+  background-color: #fff;
+  margin-bottom: 6px;
+  border-radius: 10px;
+  background-image: url(../../images/秒杀.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.main .banner .right {
+  width: 68vw;
+}
+.main .content {
+  padding: 15px;
+}
+.main .content .title {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+.main .content .line {
+  background-color: #F5F5F5;
+  height: 1px;
+  margin: 30px 0;
+}
+.main .content section h2 {
+  font-size: 25px;
+  color: #333333;
+  text-shadow: 0px 4px 8px rgba(64, 124, 255, 0.3);
+  line-height: 1.5;
+}
+.main .content section h3 {
+  font-size: 18px;
+  margin-top: 10px;
+}
+.main .content .product-phone {
+  display: none;
+}
+.main .content .product-1 {
+  display: block;
+}
+.main .content .product-1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.main .content .product-1 .left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.main .content .product-1 .right .pic img {
+  width: 400px;
+}
+.main .content .product-2 {
+  margin-top: 45px;
+}
+.main .content .product-2 .product-title {
+  font-size: 25px;
+  text-align: center;
+}
+.main .content .product-2 .product-title2 {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 8px;
+  color: #666666;
+}
+.main .content .product-2 .product-pic {
+  transition: margin 0.2s;
+  margin: 10px 220px 25px 220px;
+}
+.main .content .product-2 .product-pic img {
+  border-radius: 10px;
+}
+@media (max-width: 940px) {
+  .main .banner .left {
+    display: none;
+  }
+  .main .banner .right {
+    width: 100%;
+  }
+  .main .content .product-phone {
+    display: block;
+    margin-bottom: 25px;
+  }
+  .main .content .product-1 {
+    display: none;
+  }
+  .main .content .product-2 .product-pic {
+    margin: 10px 0px 25px 0px;
+  }
+}

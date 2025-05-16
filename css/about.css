@@ -1,0 +1,80 @@
+/* 首页样式文件 */
+.main {
+  padding-top: 110px;
+}
+.main .wrapper .content {
+  background-color: #fff;
+  margin-top: 15px;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(18, 18, 18, 0.1);
+}
+.main .wrapper .content h2 {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  border-left: 4px solid #407CFF;
+}
+.main .wrapper .content p {
+  margin-bottom: 15px;
+  color: #666666;
+}
+.main .wrapper .content .member {
+  display: flex;
+  flex-wrap: wrap;
+}
+.main .wrapper .content .member .member-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+  margin-top: 15px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 0 solid #fff;
+  transition: all 0.2s;
+}
+.main .wrapper .content .member .member-item .avater {
+  height: 65px;
+  width: 65px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.main .wrapper .content .member .member-item .name {
+  margin-top: 10px;
+  font-size: 18px;
+}
+.main .wrapper .content .member .member-item .line {
+  height: 1px;
+  width: 90%;
+  background-color: #F5F5F5;
+  margin: 10px 10px;
+}
+.main .wrapper .content .member .member-item .other {
+  width: 100%;
+  padding-left: 10px;
+  margin-bottom: 5px;
+}
+.main .wrapper .content .member .member-item:hover {
+  border: 2px solid #eee;
+}
+@media (max-width: 1140px) {
+}
+@media (max-width: 940px) {
+  .main .wrapper .content .member .member-item {
+    width: 50%;
+  }
+}
+@media (max-width: 500px) {
+  .main {
+    padding-top: 65px;
+    background-color: #fff;
+  }
+  .main .wrapper .content {
+    box-shadow: none;
+  }
+  .main .wrapper .content .member .member-item {
+    width: 100%;
+  }
+}

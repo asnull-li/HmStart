@@ -1,0 +1,43 @@
+.main .banner .left {
+  background-image: none;
+}
+.main .banner .left img {
+  height: 75%;
+}
+.main .banner .left h3 {
+  font-size: 18px;
+  margin-left: 15px;
+  margin-top: 15px;
+}
+.main .banner .left p {
+  font-size: 15px;
+  margin-left: 15px;
+  margin-top: 5px;
+}
+.main .product .title {
+  font-size: 23px;
+  margin-bottom: 5px;
+  font-weight: 600;
+  line-height: 40px;
+  margin-top: 15px;
+}
+.main .product .row .project-list {
+  margin-top: 15px;
+}
+.main .product .row .project-list .thumbnail {
+  border-radius: 5px;
+  padding-bottom: 5px;
+  background-color: #fff;
+  box-shadow: 0 1px 5px rgba(18, 18, 18, 0.1);
+}
+.main .product .row .project-list .thumbnail h3 {
+  margin-top: 10px;
+  font-size: 20px;
+  margin-left: 10px;
+}
+.main .product .row .project-list .thumbnail p {
+  color: #666666;
+  margin-top: 10px;
+  font-size: 15px;
+  margin-left: 10px;
+}

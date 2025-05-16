@@ -1,0 +1,363 @@
+<!-- 
+	Created by Asnull.
+	Website:https://lipux.cn/
+	Date:2022/5/15
+ -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="https://cdn.staticfile.org/bootstrap/4.6.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../css/base.css" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/product-8.css" />
+	
+    <title>Homier智能家居 - 环境监测模块</title>
+</head>
+
+<body>
+    <!-- 头部导航栏 -->
+    <nav class="menu shadow-sm  bg-white rounded">
+        <div class="menu-list wrapper">
+            <div class="left">
+                <h1>
+                    <a href="#"><img src="../../images/login.jpg"></a>
+                </h1>
+                <ul class="menu-conent">
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="../mall.html">商城</a></li>
+                    <li><a href="../device.html">模块介绍</a></li>
+                    <li><a class="current" href="../control.html">环境监测模块</a></li>
+                </ul>
+            </div>
+
+            <div class="user">
+                <a href="../../register.html" class="register">注册</a>
+                <a href="../../login.html" class="login">登录</a>
+
+            </div>
+            <div class="more">
+                <div class="menu-btn" onclick="menu()">
+                    <svg t="1651394480747" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2082" width="64" height="64"><path d="M892.928 128q28.672 0 48.64 19.968t19.968 48.64l0 52.224q0 28.672-19.968 48.64t-48.64 19.968l-759.808 0q-28.672 0-48.64-19.968t-19.968-48.64l0-52.224q0-28.672 19.968-48.64t48.64-19.968l759.808 0zM892.928 448.512q28.672 0 48.64 19.968t19.968 48.64l0 52.224q0 28.672-19.968 48.64t-48.64 19.968l-759.808 0q-28.672 0-48.64-19.968t-19.968-48.64l0-52.224q0-28.672 19.968-48.64t48.64-19.968l759.808 0zM892.928 769.024q28.672 0 48.64 19.968t19.968 48.64l0 52.224q0 28.672-19.968 48.64t-48.64 19.968l-759.808 0q-28.672 0-48.64-19.968t-19.968-48.64l0-52.224q0-28.672 19.968-48.64t48.64-19.968l759.808 0z" p-id="2083" fill="#515151"></path></svg>
+                </div>
+                <div class="bg">
+                    <div class="menu-tab">
+                        <div class="button">
+                            <a href="../../login.html" class="login">登录</a>
+                            <a href="../../register.html" class="register">注册</a>
+                        </div>
+                        <div class="menu-item"><a href="../index.html">首页</a></div>
+                        <div class="menu-item"><a href="../mall.html">商城</a></div>
+                        <div class="menu-item"><a href="../device.html">模块介绍</a></div>
+                        <div class="menu-item"><a href="../control.html">模块控制</a></div>
+                        
+                        <div class="menu-item"><a href="../../about.html">关于我们</a></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main app">
+		<div class="card">
+			<div class="title">空气质量</div>
+			<div class="top">
+				<div class="left">
+					<div>
+					    <canvas id="cycCanvas"  width="150" height="150">
+					      <p>您的浏览器不支持canvas</p>
+					    </canvas>
+						
+					</div>
+					<div>污染指数</div>
+				</div>
+				<div class="right">
+					<div class="item">
+						<div class="t">PM2.5</div>
+						<div class="s">24</div>
+					</div>
+					<div class="item">
+						<div class="t">Co2</div>
+						<div class="s">较少</div>
+					</div>
+					<div class="item">
+						<div class="t">有害气体</div>
+						<div class="s">较少</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="title">舒适度</div>
+			<div class="top">
+				<div class="left">
+					<div>
+					    <canvas id="cycCanvass"  width="150" height="150">
+					      <p>您的浏览器不支持canvas</p>
+					    </canvas>
+						
+					</div>
+					<div>空气湿度</div>
+				</div>
+				<div class="right">
+					<div class="item">
+						<div class="t">体感温度</div>
+						<div class="s">26℃</div>
+					</div>
+					<div class="item">
+						<div class="t">今日湿度</div>
+						<div class="s">79%</div>
+					</div>
+					
+				</div>
+			</div>
+			<div class="bottom">
+				<div class="item">
+					<svg t="1653022701117" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3146" width="128" height="128"><path d="M752.8 143.2c3.2 0 6.3 1.3 8.5 3.5L955.6 341c5.5 5.5 5.5 14.3 0 19.8L864 452.5l-96-96V895H448v1H256V357.5l-96 96-91.6-91.6c-5.5-5.5-5.5-14.3 0-19.8L263 147.5c2.3-2.3 5.3-3.5 8.5-3.5H351c33.4 26.9 92.6 64 164.6 64 72.1 0 131.4-37.2 164.8-64.2l72.3-0.6h0.1z m0-64h-0.6l-83.8 0.7c-7.6 0.1-15 2.8-20.7 7.8-19.6 17-71.3 56.3-132.1 56.3-60.6 0-112.3-39.1-132-56.2-5.8-5.1-13.3-7.8-21-7.8h-91c-20.2 0-39.5 8-53.7 22.3L23.1 296.8c-30.5 30.5-30.5 79.8 0 110.3L128 512c8.8 8.8 20.4 13.3 32 13.3s23.2-4.4 32-13.3v416c0 17.7 14.3 32 32 32h288v-1h288c17.7 0 32-14.3 32-32V511c8.8 8.8 20.4 13.3 32 13.3s23.2-4.4 32-13.3l104.8-104.8c30.5-30.5 30.5-79.8 0-110.3L806.5 101.5c-14.2-14.2-33.6-22.3-53.7-22.3z" p-id="3147" fill="#707070"></path></svg>
+					<div class="t1">穿衣</div>
+					<div class="c">短袖</div>
+				</div>
+				<div class="item">
+					<svg t="1653022842035" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4417" width="128" height="128"><path d="M976 671.36l1.066667-2.986667c4.906667-14.293333 8.96-29.013333 12.373333-42.666666v-2.773334c3.413333-14.933333 5.973333-29.866667 8.106667-44.8V576A490.666667 490.666667 0 0 0 514.986667 21.333333a21.333333 21.333333 0 0 0-4.266667 0 492.373333 492.373333 0 0 0-126.72 16.853334A490.666667 490.666667 0 0 0 52.906667 684.16q4.053333 10.88 8.746666 21.333333c2.133333 5.12 4.693333 10.24 7.04 15.36l3.2 6.613334c2.773333 5.973333 5.973333 11.733333 8.96 17.493333l1.92 3.413333q5.333333 9.6 10.88 18.773334a482.986667 482.986667 0 0 0 71.466667 90.453333l4.48 4.48 12.586667 11.733333 7.466666 6.613334 11.52 9.813333 10.026667 7.893333 10.24 7.893334 13.226667 11.306666 8.32 5.76c7.466667 4.906667 15.146667 9.6 23.04 14.08s18.346667 10.24 27.733333 14.72l14.08 6.4 13.866667 6.186667 17.92 7.04 10.666666 4.053333 19.2 6.186667 10.453334 3.2 18.56 4.693333 11.946666 2.773334 16.64 3.2 14.72 2.346666 13.866667 1.706667 18.346667 1.706667H513.706667a490.666667 490.666667 0 0 0 207.786666-47.786667l3.2-1.493333c7.04-3.413333 14.08-7.253333 21.333334-11.093334l7.68-4.053333 16-9.813333 11.733333-7.253334 11.52-8.106666c4.906667-3.413333 10.026667-7.04 14.933333-10.666667l7.893334-6.4c5.76-4.693333 11.52-9.173333 17.28-14.08l5.333333-4.906667c6.186667-5.546667 12.373333-11.093333 18.346667-17.066666l4.053333-4.266667c6.186667-6.186667 12.16-12.586667 18.133333-19.2l4.266667-5.12c5.546667-6.4 11.093333-13.013333 16.426667-19.84l6.826666-9.386667c4.053333-5.546667 8.32-11.093333 12.16-17.066666q9.173333-13.653333 17.493334-28.16c7.893333-13.653333 14.933333-27.52 21.333333-42.666667v-2.133333c8.106667-11.093333 13.653333-25.173333 18.56-39.466667z m-23.68-80c-1.28 7.253333-2.346667 14.72-4.053333 21.333333s-4.266667 15.36-6.4 23.04-3.413333 12.586667-5.333334 18.773334-6.826667 17.92-10.453333 26.88c-1.92 4.693333-3.626667 9.6-5.546667 14.08-6.186667 13.44-12.8 26.666667-21.333333 39.893333s-14.293333 23.04-21.333333 33.92l-6.186667 8.746667c-7.466667 10.026667-15.146667 19.626667-23.253333 28.8l-3.413334 3.84c-5.973333 6.826667-12.586667 13.013333-18.773333 19.2 21.333333-161.28-51.626667-314.666667-106.666667-429.866667a1069.013333 1069.013333 0 0 1-44.16-99.84c146.986667 44.8 257.92 147.84 280.106667 272.213333-0.853333 6.4-2.133333 12.586667-3.2 18.986667zM740.693333 896q-13.226667 7.893333-27.093333 14.72l-6.826667 3.413333c-11.093333 5.333333-22.4 10.026667-33.92 14.506667l-10.453333 3.84q-13.653333 4.906667-27.733333 8.96l-9.6 2.773333q-17.706667 4.693333-35.84 7.68l-10.666667 1.706667q-14.08 2.133333-28.373333 3.413333h-19.626667c-48.64-333.013333-56.746667-546.133333-49.706667-680.533333 9.813333 0.853333 20.48 0.853333 31.146667 0.853333a577.28 577.28 0 0 1 114.986667 11.733334 730.453333 730.453333 0 0 0 53.973333 130.346666c58.666667 122.24 139.093333 289.493333 93.226667 455.04-7.68 5.546667-15.36 10.88-23.253334 15.786667z m-288 59.733333c-12.586667-1.706667-25.173333-3.84-37.76-6.613333l-6.4-1.706667c-10.666667-2.56-21.333333-5.546667-31.786666-8.746666l-9.6-2.986667q-17.706667-5.973333-34.986667-13.653333l-8.106667-4.693334c-12.16-5.546667-24.32-11.52-36.053333-18.346666s-24.32-14.933333-35.84-23.04l-3.84-1.28q-16.64-12.16-32-25.6l-2.986667-3.626667-1.28-1.28c-44.373333-165.973333 25.386667-320 76.8-434.133333a934.826667 934.826667 0 0 0 42.666667-102.826667 551.466667 551.466667 0 0 1 106.666667-24.746667c-6.613333 139.093333 2.773333 352 49.92 676.48-8.96 0-17.92 0-26.88-1.92zM130.346667 746.666667c-7.253333-11.733333-13.653333-23.893333-19.84-36.053334l-1.92-4.053333q-8.32-17.493333-15.36-35.626667l-2.346667-6.826666c-3.2-8.96-5.973333-17.92-8.533333-26.88-1.28-4.693333-2.773333-9.173333-3.84-13.866667-2.346667-9.173333-4.266667-18.56-5.973334-27.733333s-2.346667-13.653333-3.413333-21.333334v-3.626666c18.986667-103.253333 98.56-190.72 208.853333-242.56-7.893333 19.626667-17.493333 41.173333-27.946666 64-47.36 104.106667-108.8 240.853333-92.373334 393.6A446.293333 446.293333 0 0 1 130.56 746.666667zM522.453333 64A443.733333 443.733333 0 0 1 704 106.666667a184.106667 184.106667 0 0 0-81.066667 137.6A616.746667 616.746667 0 0 0 512 234.666667h-28.373333c9.6-111.146667 30.08-156.16 38.826666-170.666667zM955.733333 455.68c-57.173333-95.146667-162.56-168.32-290.346666-201.386667-1.706667-69.76 57.813333-110.293333 81.28-123.52a448 448 0 0 1 209.066666 324.906667zM396.16 79.36a452.906667 452.906667 0 0 1 77.866667-13.44 584.533333 584.533333 0 0 0-33.92 173.44 599.466667 599.466667 0 0 0-100.48 20.266667 135.466667 135.466667 0 0 0-62.933334-128 449.493333 449.493333 0 0 1 119.466667-52.266667zM124.16 288a448 448 0 0 1 112.853333-129.706667c20.266667 7.68 69.76 34.773333 58.88 110.72 0 1.92 0 3.84-1.066666 5.76a451.413333 451.413333 0 0 0-227.413334 182.186667 445.44 445.44 0 0 1 56.746667-168.96z" p-id="4418" fill="#707070"></path></svg>
+					<div class="t1">运动</div>
+					<div class="c">适宜</div>
+				</div>
+				<div class="item">
+					<svg t="1653022921826" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6319" width="128" height="128"><path d="M313.469388 931.004082c-56.42449 0-113.371429-21.420408-156.212245-64.783674-41.795918-41.795918-64.261224-97.17551-64.261225-156.212245 0-59.036735 22.987755-114.416327 64.261225-156.212245l396.016326-396.016326c86.204082-86.204082 226.220408-86.204082 312.42449 0s86.204082 226.220408 0 312.42449l-396.016326 396.016326c-43.363265 43.363265-99.787755 64.783673-156.212245 64.783674zM708.963265 135.836735c-45.97551 0-91.95102 17.240816-126.432653 52.244898l-396.016326 396.016326c-33.436735 33.436735-52.244898 78.889796-52.244898 126.432653 0 48.065306 18.285714 92.995918 52.244898 126.432653 70.008163 70.008163 183.379592 70.008163 253.387755 0L835.918367 441.469388c70.008163-70.008163 70.008163-183.379592 0-253.387755-35.004082-35.004082-80.979592-52.244898-126.955102-52.244898zM171.885714 568.946939z" p-id="6320" fill="#707070"></path><path d="M652.538776 683.363265L340.114286 370.938776l212.636734-212.636735c86.204082-86.204082 226.220408-86.204082 312.42449 0s86.204082 226.220408 0 312.42449l-212.636734 212.636734zM399.15102 370.938776l253.387756 253.387755 182.857142-182.857143c70.008163-70.008163 70.008163-183.379592 0-253.387755-70.008163-70.008163-183.379592-70.008163-253.387755 0l-182.857143 182.857143z" p-id="6321" fill="#707070"></path><path d="M626.416327 299.885714c-5.22449 0-10.44898-2.089796-14.628572-6.269387l-79.934694-79.934694c-8.359184-8.359184-8.359184-21.420408 0-29.779592 8.359184-8.359184 21.420408-8.359184 29.779592 0l79.934694 79.934694c8.359184 8.359184 8.359184 21.420408 0 29.779592-4.702041 4.179592-9.926531 6.269388-15.15102 6.269387zM545.959184 380.342857c-5.22449 0-10.44898-2.089796-14.628572-6.269388L451.395918 294.138776c-8.359184-8.359184-8.359184-21.420408 0-29.779592 8.359184-8.359184 21.420408-8.359184 29.779592 0l79.934694 79.934694c8.359184 8.359184 8.359184 21.420408 0 29.779591-4.179592 4.179592-9.926531 6.269388-15.15102 6.269388z" p-id="6322" fill="#707070"></path></svg>
+					<div class="t1">感冒</div>
+					<div class="c">不易</div>
+				</div>
+				<div class="item">
+					<svg t="1653022948202" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7249" width="128" height="128"><path d="M912.832 467.104h-22.272l-6.624-22.464h60.928a32 32 0 1 0 0-64h-79.808l-35.584-120.544C815.168 221.28 771.52 192 728 192H302.592c-43.52 0-87.136 29.28-102.112 70.112l-34.944 118.528H96a32 32 0 0 0 0 64h50.624l-6.624 22.464H128c-35.296 0-64 28.704-64 64v282.944h51.104v34.816a32 32 0 1 0 64 0v-34.816h690.528v34.816a32 32 0 1 0 64 0v-34.816h43.232v-282.944a64.128 64.128 0 0 0-64.032-64zM128 750.016v-104.96h73.792c26.464 0 50.528-16.672 59.872-41.408l24.064-63.712c1.088-2.912 1.216-5.888 1.44-8.832h450.528c0.224 2.944 0.352 5.92 1.44 8.832l24.064 63.648a64.256 64.256 0 0 0 59.872 41.472h89.76v104.96H128z m784.832-168.96l-89.76-0.032-18.848-49.952h108.608v49.984zM218.528 426.944a30.944 30.944 0 0 0 2.816-9.568L261.184 282.24c4.48-12.16 23.52-26.24 41.408-26.24H728c17.888 0 36.928 14.08 40.736 24.192l55.104 186.88H206.72l11.808-40.128z m2.144 104.16l-18.88 49.984H128v-49.984h92.672z" p-id="7250" fill="#707070"></path><path d="M614.752 626.24h-188.64a32 32 0 1 0 0 64h188.64a32 32 0 1 0 0-64z" p-id="7251" fill="#707070"></path></svg>
+					<div class="t1">洗车</div>
+					<div class="c">不宜</div>
+				</div>
+			</div>
+		</div>
+    </div>
+    <!-- 页脚 -->
+    <div class="footer">
+        <div class="top wrapper">
+            <dl>
+                <dt>Homier</dt>
+                <dd><a href="#">价格</a></dd>
+                <dd><a href="#">开发者社区</a></dd>
+                <dd><a href="../../about.html">为何选择Homier</a></dd>
+                <dd><a href="../../help.html">帮助中心</a></dd>
+            </dl>
+            <dl>
+                <dt>我的</dt>
+                <dd><a href="../mall.html">购物中心</a></dd>
+                <dd><a href="../device.html">我的设备</a></dd>
+            </dl>
+            <dl>
+                <dt>联系我们</dt>
+                <dd><a href="#">电子邮箱</a></dd>
+                <dd><a href="#">电话</a></dd>
+                <dd><a href="#">微信公众号</a></dd>
+                <dd><a href="#">微博</a></dd>
+                <dd><a href="#">Facebook</a></dd>
+
+            </dl>
+            <dl>
+                <dt>关于我们</dt>
+                <dd><a href="../../about.html">团队</a></dd>
+                <dd><a href="../../Privacy_Policy.html">隐私政策</a></dd>
+                <dd><a href="../../about.html">招贤纳士</a></dd>
+            </dl>
+        </div>
+        <div class="line wrapper"></div>
+        <div class="bottom wrapper"><a href="https://beian.miit.gov.cn/">粤ICP备2021145227号 </a><a href="https://lipux.cn/">Created by Asnull.</a></div>
+    </div>
+	<script type="text/javascript">
+	
+	  /**
+	   * 画圆
+	   * @param {number} cx x坐标
+	   * @param {number} cy y坐标
+	   * @param {number} r  半径
+	   * @param {number} lineWidth  线宽度
+	   * @return null
+	   */
+	  function circle(ctx, cx, cy, r, lineWidth) {
+	    if (!ctx) return
+	    ctx.beginPath();
+	    ctx.lineWidth = lineWidth;
+	    ctx.strokeStyle = '#eee';
+	    ctx.arc(cx, cy, r, 0, (Math.PI * 2), true);
+	    ctx.stroke();
+	  }
+	
+	  /**
+	    * 画弧线
+	    * @param {number} cx x坐标
+	    * @param {number} cy y坐标
+	    * @param {number} r  半径
+	    * @param {number} lineWidth  线宽度
+	    * @param {number} startAngle 开始角度 按照360算
+	    * @param {number} endAngle 结束角度 按照360算
+	    * @return null
+	    */
+	  function sector(ctx, cx, cy, r, lineWidth, startAngle = 0, endAngle = 360) {
+	    if (!ctx) return
+	    ctx.beginPath();
+	    ctx.lineWidth = lineWidth;
+	
+	    // 渐变色
+	    let linGrad = ctx.createLinearGradient(
+	      cx - r - lineWidth, cy, cx + r + lineWidth, cy
+	    );
+	    linGrad.addColorStop(0.0, '#ffcc99');
+	    linGrad.addColorStop(0.5, '#99ff66');
+	    linGrad.addColorStop(1.0, '#66ccff');
+	    ctx.strokeStyle = linGrad;
+	
+	    // 单色
+	    // ctx.strokeStyle = 'red';
+	
+	    //圆弧两端的样式
+	    ctx.lineCap = 'round';
+	
+	    //圆弧
+	    const _startAng = Math.PI * ((startAngle - 90) / 180)
+	    const _endAng = Math.PI * ((endAngle - 90) / 180)
+	    ctx.arc(
+	      cx, cy, r,
+	      _startAng,
+	      _endAng,
+	      false
+	    );
+	    ctx.stroke();
+	  }
+	
+	  /**
+	    * 刷新进度条
+	    * @param {number} cx x坐标
+	    * @param {number} cy y坐标
+	    * @param {number} r  半径
+	    * @param {number} lineWidth  线宽度
+	    * @param {number} process 完成进度
+	    * @return null
+	    */
+	  function freshProgress(ctx, cx, cy, r, lineWidth, process) {
+	
+	    if (!ctx) return
+	
+	    //清除canvas内容
+	    ctx.clearRect(0, 0, cx * 2, cy * 2);
+	
+	    //中间的字
+	    ctx.textAlign = 'center';
+	    ctx.textBaseline = 'middle';
+	    ctx.fillStyle = '#999';
+		ctx.font = "20px sans-serif"
+		
+	    ctx.fillText(parseFloat(process).toFixed(0) + '%', cx, cy);
+	
+	    //圆形
+	    circle(ctx, cx, cy, r, lineWidth);
+	
+	    //圆弧
+	    sector(ctx, cx, cy, r, lineWidth, 0, process * 3.6);
+	  }
+	
+	  /**
+	    * 绘制进度条 有动画的
+	    * @param {string} id canvas 组件的id
+	    * @param {number} progress 进度 最大100 是一圈
+	    * @param {number} time 执行时间 单位秒 p.s. 好像算的有点不对 大概
+	    */
+	  function drawProgress(id, progress, time = 1) {
+	    const canvas = document.getElementById(id), // canvas进度条
+	      circleX = canvas.width / 2,  //中心x坐标
+	      circleY = canvas.height / 2,  //中心y坐标
+	      radius = 60, //圆环半径
+	      lineWidth = 14, //圆形线条的宽度
+	      delay = time / progress * 1000; // 延迟时间
+	
+	    const ctx = canvas.getContext("2d");
+	    let nowProgress = 0;  //显示进度
+	    let circleLoading = window.setInterval(function () {
+	      if (nowProgress > progress) {
+	        clearInterval(circleLoading);
+	      } else {
+	        freshProgress(ctx, circleX, circleY, radius, lineWidth, nowProgress);
+	        nowProgress += 1.0;
+	      }
+	
+	    }, delay);
+	
+	  }
+	  /**
+	    * 刷新百分比
+	    * @param {number} cx x坐标
+	    * @param {number} cy y坐标
+	    * @param {number} r  半径
+	    * @param {number} lineWidth  线宽度
+	    * @param {array} data 数据的 number 数组
+	    * @param {number} process 完成进度
+	    * @return null
+	    */
+	  function freshPrecentage(ctx, cx, cy, r, lineWidth, data, process) {
+	    if (!ctx) return
+	    //清除canvas内容
+	    ctx.clearRect(0, 0, cx * 2, cy * 2);
+	    if (data.length) {
+	      const sum = data.reduce((prev, next) => prev + next)
+	      const space = data.length > 1 ? (data.length) * 15 : 0;
+	      let _startAng = 0
+	      const resmap = data.map(element => {
+	        const item = { startAngle: _startAng, endAngle: _startAng + element / sum * (360 - space), element, sum }
+	        if (process >= _startAng) {
+	          const endArg = Math.min(item.endAngle, process)
+	          sector(ctx, cx, cy, r, lineWidth, item.startAngle, endArg);
+	        }
+	        _startAng = item.endAngle + 15
+	        return item
+	      });
+	    }
+	  }
+	
+	  /**
+	    * 绘制百分比 有动画的
+	    * @param {string} id canvas 组件的id
+	    * @param {array} data 数据的 number 数组
+	    * @param {number} time 执行时间 单位秒 p.s. 好像算的有点不对 大概
+	    */
+	  function drawPercentage(id, data = [], time = 1) {
+	    const canvas = document.getElementById(id), // canvas进度条
+	      circleX = canvas.width / 2,  //中心x坐标
+	      circleY = canvas.height / 2,  //中心y坐标
+	      radius = 100, //圆环半径
+	      lineWidth = 20, //圆形线条的宽度
+	      delay = time * 10;
+	    const ctx = canvas.getContext("2d");
+	    console.log(delay)
+	    let nowProgress = 0;  //显示进度
+	    let circleLoading = window.setInterval(function () {
+	      if (nowProgress > 100) {
+	        clearInterval(circleLoading);
+	      } else {
+	        freshPrecentage(ctx, circleX, circleY, radius, lineWidth, data, nowProgress * 3.6)
+	        nowProgress += 1.0;
+	      }
+	
+	    }, delay);
+	
+	  }
+	
+	  //调用
+	  drawProgress('cycCanvas', 56);
+	  drawProgress('cycCanvass', 79);
+	
+	</script>
+
+	<script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../../js/index.js"></script>
+</body>
+
+</html>
